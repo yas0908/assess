@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iot-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iot
+  template:
+    metadata:
+      labels:
+        app: iot
+    spec:
+      containers:
+      - name: iot-app
+        image: 123456789012.dkr.ecr.us-west-2.amazonaws.com/dotnet-iot-app  
+        ports:
+        - containerPort: 80
